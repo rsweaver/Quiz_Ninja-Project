@@ -98,8 +98,11 @@ hasDuplicate([2,3,6, 7, 9, 4,4,6]) // example output
 
 function toBinary(n)
 {
-    
-    if (n===0)  // if n is 0, output 0
+    if (n<0)
+        {
+            console.log("Please try with a positive number");
+        }
+    else if (n===0)  // if n is 0, output 0
         {
             console.log("0");
         }
@@ -118,7 +121,7 @@ function toBinary(n)
                         }
                     else //if our number does not, we will have a 1
                             // we will end the cycle once our number divids all the way down to 1
-                    
+
                         {
                             m.unshift("1");
                             n = (n-1)/2; // we halve rounding down
