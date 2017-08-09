@@ -116,16 +116,12 @@ function toBinary(n)
                             m.unshift("0"); //add number to left since binary reads right to left
                             n = n/2;  //now halve our number to test for the next largest power of 2
                         }
-                    else if (n!=1) //if our number does not, we will have a 1
-                            // if our number is 1, we must stop
+                    else //if our number does not, we will have a 1
+                            // we will end the cycle once our number divids all the way down to 1
+                    
                         {
                             m.unshift("1");
                             n = (n-1)/2; // we halve rounding down
-                        }
-                    else // we have reached 1 and to end of dividing we will add our last 1, and set n=0 to break it
-                        {
-                            m.unshift("1");
-                            n =0;
                         }
                 }
             console.log(m.join("")); // print the array but remove the commas
